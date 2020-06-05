@@ -2,5 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 // Export kinds:
-export * from './service-role-binding';
-export * from './service-role';
+export * from './destination-rule';
+export * from './gateway';
+export * from './service-entry';
+export * from './sidecar';
+export * from './virtual-service';

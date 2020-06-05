@@ -6,11 +6,14 @@ import * as k8s from '@pulumi/kubernetes';
 
 import { input } from '../../types';
 
-export class ServiceRole extends k8s.apiextensions.CustomResource {
-  constructor(name: string, args: input.rbac.v1alpha1.ServiceRoleArgs, opts?: CustomResourceOptions) {
+export class Gateway extends k8s.apiextensions.CustomResource {
+  constructor(name: string, args: input.networking.v1beta1.GatewayArgs, opts?: CustomResourceOptions) {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
-      apiVersion: 'rbac.istio.io/v1alpha1',
-      kind: 'ServiceRole',
+      apiVersion: 'networking.istio.io/v1beta1',
+      kind: 'Gateway',
+      metadata: {
+        name,
+      },
       ...args,
     };
 

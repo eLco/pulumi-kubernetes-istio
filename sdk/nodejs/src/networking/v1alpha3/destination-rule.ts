@@ -11,6 +11,9 @@ export class DestinationRule extends k8s.apiextensions.CustomResource {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
       apiVersion: 'networking.istio.io/v1alpha3',
       kind: 'DestinationRule',
+      metadata: {
+        name,
+      },
       ...args,
     };
 

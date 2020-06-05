@@ -2,7 +2,7 @@ import { OpenAPIObject } from 'openapi3-ts';
 
 import { Kind } from './enums';
 
-export const isKind = (name: string): name is Kind => Object.values(Kind).includes(name);
+export const isKind = (name: string): name is Kind => Object.values(Kind).includes(name as Kind);
 
 export const isOpenApiDefinition = (obj: any): obj is OpenAPIObject => 'openapi' in obj;
 

@@ -11,6 +11,9 @@ export class Policy extends k8s.apiextensions.CustomResource {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
       apiVersion: 'authentication.istio.io/v1alpha1',
       kind: 'Policy',
+      metadata: {
+        name,
+      },
       ...args,
     };
 

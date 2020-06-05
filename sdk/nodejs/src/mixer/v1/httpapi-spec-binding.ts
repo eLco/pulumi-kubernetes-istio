@@ -11,6 +11,9 @@ export class HTTPAPISpecBinding extends k8s.apiextensions.CustomResource {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
       apiVersion: 'mixer.istio.io/v1',
       kind: 'HTTPAPISpecBinding',
+      metadata: {
+        name,
+      },
       ...args,
     };
 

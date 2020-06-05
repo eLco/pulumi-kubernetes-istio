@@ -3,6 +3,7 @@
 
 // Import versions:
 import * as v1alpha3 from './v1alpha3';
+import * as v1beta1 from './v1beta1';
 
 // Export sub-modules
-export { v1alpha3,  };
+export { v1alpha3, v1beta1,  };

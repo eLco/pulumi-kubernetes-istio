@@ -6,11 +6,14 @@ import * as k8s from '@pulumi/kubernetes';
 
 import { input } from '../../types';
 
-export class ServiceRoleBinding extends k8s.apiextensions.CustomResource {
-  constructor(name: string, args: input.rbac.v1alpha1.ServiceRoleBindingArgs, opts?: CustomResourceOptions) {
+export class ServiceEntry extends k8s.apiextensions.CustomResource {
+  constructor(name: string, args: input.networking.v1beta1.ServiceEntryArgs, opts?: CustomResourceOptions) {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
-      apiVersion: 'rbac.istio.io/v1alpha1',
-      kind: 'ServiceRoleBinding',
+      apiVersion: 'networking.istio.io/v1beta1',
+      kind: 'ServiceEntry',
+      metadata: {
+        name,
+      },
       ...args,
     };
 

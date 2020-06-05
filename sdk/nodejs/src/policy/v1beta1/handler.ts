@@ -11,6 +11,9 @@ export class Handler extends k8s.apiextensions.CustomResource {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
       apiVersion: 'policy.istio.io/v1beta1',
       kind: 'Handler',
+      metadata: {
+        name,
+      },
       ...args,
     };
 
