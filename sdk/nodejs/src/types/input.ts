@@ -7,8 +7,7 @@ import * as k8s from '@pulumi/kubernetes';
 export namespace authentication {
   export namespace v1alpha1 {
     // @ts-ignore
-    export interface StringMatch {
-    }
+    export interface StringMatch {}
     // @ts-ignore
     export interface MutualTls {
       // Deprecated. Please use mode = PERMISSIVE instead. If set, will translate to `TLS_PERMISSIVE` mode. Set this flag to true to allow regular TLS (i.e without client x509 certificate). If request carries client certificate, identity will be extracted and used (set to peer identity). Otherwise, peer identity will be left unset. When the flag is false (default), request must have client certificate.
@@ -53,8 +52,7 @@ export namespace authentication {
       includedPaths?: Input<Input<StringMatch>[]>;
     }
     // @ts-ignore
-    export interface PeerAuthenticationMethod {
-    }
+    export interface PeerAuthenticationMethod {}
     // @ts-ignore
     export interface OriginAuthenticationMethod {
       // @ts-ignore
@@ -96,14 +94,12 @@ export namespace authentication {
       ports?: Input<Input<PortSelector>[]>;
     }
     // @ts-ignore
-    export interface PortSelector {
-    }
+    export interface PortSelector {}
   }
 }
 
 export namespace common {
-  export namespace config {
-  }
+  export namespace config {}
 }
 
 export namespace mcp {
@@ -152,7 +148,7 @@ export namespace mcp {
     export interface Resource {
       // The primary payload for the resource.
       // @ts-ignore
-      body?: Input<{ @type: Input<string> }>;
+      body?: Input<{ type: Input<string> }>;
       // @ts-ignore
       metadata?: Input<Metadata>;
     }
@@ -544,8 +540,7 @@ export namespace mesh {
       gateways?: Input<Input<IstioNetworkGateway>[]>;
     }
     // @ts-ignore
-    export interface NetworkEndpoints {
-    }
+    export interface NetworkEndpoints {}
     // @ts-ignore
     export interface IstioNetworkGateway {
       // The port associated with the gateway.
@@ -578,8 +573,7 @@ export namespace mesh {
       sampling?: Input<number>;
     }
     // @ts-ignore
-    export interface CustomTag {
-    }
+    export interface CustomTag {}
     // @ts-ignore
     export interface Zipkin {
       // Address of the Zipkin service (e.g. _zipkin:9411_).
@@ -658,7 +652,9 @@ export namespace mesh {
       forwardClientCertDetails?: Input<ForwardClientCertDetails>;
     }
     // @ts-ignore
-    export type ForwardClientCertDetails = Input<'UNDEFINED' | 'SANITIZE' | 'FORWARD_ONLY' | 'APPEND_FORWARD' | 'SANITIZE_SET' | 'ALWAYS_FORWARD_ONLY'>;
+    export type ForwardClientCertDetails = Input<
+      'UNDEFINED' | 'SANITIZE' | 'FORWARD_ONLY' | 'APPEND_FORWARD' | 'SANITIZE_SET' | 'ALWAYS_FORWARD_ONLY'
+    >;
     // @ts-ignore
     export type InboundInterceptionMode = Input<'REDIRECT' | 'TPROXY'>;
     // @ts-ignore
@@ -747,8 +743,7 @@ export namespace mixer {
       attributes?: Input<Record<Input<string>, Input<AttributeValue>>>;
     }
     // @ts-ignore
-    export interface AttributeValue {
-    }
+    export interface AttributeValue {}
     // @ts-ignore
     export interface StringMap {
       // Holds a set of name/value pairs.
@@ -920,8 +915,7 @@ export namespace mixer {
     // @ts-ignore
     export type RepeatedAttributesSemantics = Input<'DELTA_ENCODING' | 'INDEPENDENT_ENCODING'>;
     // @ts-ignore
-    export interface ReportResponse {
-    }
+    export interface ReportResponse {}
     // @ts-ignore
     export interface Status {
       // The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
@@ -958,8 +952,7 @@ export namespace mixer {
       httpMethod?: Input<string>;
     }
     // @ts-ignore
-    export interface APIKey {
-    }
+    export interface APIKey {}
     // @ts-ignore
     export interface HTTPAPISpecReference {
       // The short name of the HTTPAPISpec. This is the resource name defined by the metadata name field.
@@ -1135,8 +1128,7 @@ export namespace mixer {
       charge?: Input<number>;
     }
     // @ts-ignore
-    export interface StringMatch {
-    }
+    export interface StringMatch {}
     // @ts-ignore
     export interface QuotaSpecBinding {
       // One or more services to map the listed QuotaSpec onto.
@@ -1162,8 +1154,7 @@ export namespace mixer {
       attributes?: Input<Record<Input<string>, Input<AttributeValue>>>;
     }
     // @ts-ignore
-    export interface AttributeValue {
-    }
+    export interface AttributeValue {}
     // @ts-ignore
     export interface StringMap {
       // Holds a set of name/value pairs.
@@ -1418,7 +1409,17 @@ export namespace networking {
       patch?: Input<Patch>;
     }
     // @ts-ignore
-    export type ApplyTo = Input<'INVALID' | 'LISTENER' | 'FILTER_CHAIN' | 'NETWORK_FILTER' | 'HTTP_FILTER' | 'ROUTE_CONFIGURATION' | 'VIRTUAL_HOST' | 'HTTP_ROUTE' | 'CLUSTER'>;
+    export type ApplyTo = Input<
+      | 'INVALID'
+      | 'LISTENER'
+      | 'FILTER_CHAIN'
+      | 'NETWORK_FILTER'
+      | 'HTTP_FILTER'
+      | 'ROUTE_CONFIGURATION'
+      | 'VIRTUAL_HOST'
+      | 'HTTP_ROUTE'
+      | 'CLUSTER'
+    >;
     // @ts-ignore
     export type PatchContext = Input<'ANY' | 'SIDECAR_INBOUND' | 'SIDECAR_OUTBOUND' | 'GATEWAY'>;
     // @ts-ignore
@@ -1534,7 +1535,9 @@ export namespace networking {
       value?: Input<object>;
     }
     // @ts-ignore
-    export type Operation = Input<'INVALID' | 'MERGE' | 'ADD' | 'REMOVE' | 'INSERT_BEFORE' | 'INSERT_AFTER' | 'INSERT_FIRST'>;
+    export type Operation = Input<
+      'INVALID' | 'MERGE' | 'ADD' | 'REMOVE' | 'INSERT_BEFORE' | 'INSERT_AFTER' | 'INSERT_FIRST'
+    >;
     // @ts-ignore
     export interface EnvoyConfigObjectMatch {
       // @ts-ignore
@@ -2159,8 +2162,7 @@ export namespace networking {
       sourceSubnet?: Input<string>;
     }
     // @ts-ignore
-    export interface StringMatch {
-    }
+    export interface StringMatch {}
     // @ts-ignore
     export interface Delay {
       // Percentage of requests on which the delay will be injected (0-100). Use of integer `percent` value is deprecated. Use the double `percentage` field instead.
@@ -3032,8 +3034,7 @@ export namespace networking {
       sourceSubnet?: Input<string>;
     }
     // @ts-ignore
-    export interface StringMatch {
-    }
+    export interface StringMatch {}
     // @ts-ignore
     export interface Delay {
       // Percentage of requests on which the delay will be injected (0-100). Use of integer `percent` value is deprecated. Use the double `percentage` field instead.
@@ -3083,8 +3084,7 @@ export namespace policy {
       value?: Input<string>;
     }
     // @ts-ignore
-    export interface Value {
-    }
+    export interface Value {}
     // @ts-ignore
     export interface AttributeManifest {
       // Name of the component producing these attributes. This can be the proxy (with the canonical name `istio-proxy`) or the name of an `attributes` kind adapter in Mixer.
@@ -3106,7 +3106,20 @@ export namespace policy {
       valueType?: Input<ValueType>;
     }
     // @ts-ignore
-    export type ValueType = Input<'VALUE_TYPE_UNSPECIFIED' | 'STRING' | 'INT64' | 'DOUBLE' | 'BOOL' | 'TIMESTAMP' | 'IP_ADDRESS' | 'EMAIL_ADDRESS' | 'URI' | 'DNS_NAME' | 'DURATION' | 'STRING_MAP'>;
+    export type ValueType = Input<
+      | 'VALUE_TYPE_UNSPECIFIED'
+      | 'STRING'
+      | 'INT64'
+      | 'DOUBLE'
+      | 'BOOL'
+      | 'TIMESTAMP'
+      | 'IP_ADDRESS'
+      | 'EMAIL_ADDRESS'
+      | 'URI'
+      | 'DNS_NAME'
+      | 'DURATION'
+      | 'STRING_MAP'
+    >;
     export interface RuleArgs {
       metadata?: k8s.apiextensions.CustomResourceArgs['metadata'];
       spec: Input<Rule>;
@@ -3215,8 +3228,7 @@ export namespace policy {
       authentication?: Input<Authentication>;
     }
     // @ts-ignore
-    export interface Authentication {
-    }
+    export interface Authentication {}
     // @ts-ignore
     export interface RandomSampling {
       // Specifies an attribute expression to use to override the numerator in the `percent_sampled` field. If this value is set, but no value is found OR if that value is not a numeric value, then the derived sampling rate will be 0 (meaning no `Action`s are executed for a `Rule`).
@@ -3306,7 +3318,65 @@ export namespace policy {
       headers?: Input<Record<Input<string>, Input<string>>>;
     }
     // @ts-ignore
-    export type HttpStatusCode = Input<'Empty' | 'Continue' | 'OK' | 'Created' | 'Accepted' | 'NonAuthoritativeInformation' | 'NoContent' | 'ResetContent' | 'PartialContent' | 'MultiStatus' | 'AlreadyReported' | 'IMUsed' | 'MultipleChoices' | 'MovedPermanently' | 'Found' | 'SeeOther' | 'NotModified' | 'UseProxy' | 'TemporaryRedirect' | 'PermanentRedirect' | 'BadRequest' | 'Unauthorized' | 'PaymentRequired' | 'Forbidden' | 'NotFound' | 'MethodNotAllowed' | 'NotAcceptable' | 'ProxyAuthenticationRequired' | 'RequestTimeout' | 'Conflict' | 'Gone' | 'LengthRequired' | 'PreconditionFailed' | 'PayloadTooLarge' | 'URITooLong' | 'UnsupportedMediaType' | 'RangeNotSatisfiable' | 'ExpectationFailed' | 'MisdirectedRequest' | 'UnprocessableEntity' | 'Locked' | 'FailedDependency' | 'UpgradeRequired' | 'PreconditionRequired' | 'TooManyRequests' | 'RequestHeaderFieldsTooLarge' | 'InternalServerError' | 'NotImplemented' | 'BadGateway' | 'ServiceUnavailable' | 'GatewayTimeout' | 'HTTPVersionNotSupported' | 'VariantAlsoNegotiates' | 'InsufficientStorage' | 'LoopDetected' | 'NotExtended' | 'NetworkAuthenticationRequired'>;
+    export type HttpStatusCode = Input<
+      | 'Empty'
+      | 'Continue'
+      | 'OK'
+      | 'Created'
+      | 'Accepted'
+      | 'NonAuthoritativeInformation'
+      | 'NoContent'
+      | 'ResetContent'
+      | 'PartialContent'
+      | 'MultiStatus'
+      | 'AlreadyReported'
+      | 'IMUsed'
+      | 'MultipleChoices'
+      | 'MovedPermanently'
+      | 'Found'
+      | 'SeeOther'
+      | 'NotModified'
+      | 'UseProxy'
+      | 'TemporaryRedirect'
+      | 'PermanentRedirect'
+      | 'BadRequest'
+      | 'Unauthorized'
+      | 'PaymentRequired'
+      | 'Forbidden'
+      | 'NotFound'
+      | 'MethodNotAllowed'
+      | 'NotAcceptable'
+      | 'ProxyAuthenticationRequired'
+      | 'RequestTimeout'
+      | 'Conflict'
+      | 'Gone'
+      | 'LengthRequired'
+      | 'PreconditionFailed'
+      | 'PayloadTooLarge'
+      | 'URITooLong'
+      | 'UnsupportedMediaType'
+      | 'RangeNotSatisfiable'
+      | 'ExpectationFailed'
+      | 'MisdirectedRequest'
+      | 'UnprocessableEntity'
+      | 'Locked'
+      | 'FailedDependency'
+      | 'UpgradeRequired'
+      | 'PreconditionRequired'
+      | 'TooManyRequests'
+      | 'RequestHeaderFieldsTooLarge'
+      | 'InternalServerError'
+      | 'NotImplemented'
+      | 'BadGateway'
+      | 'ServiceUnavailable'
+      | 'GatewayTimeout'
+      | 'HTTPVersionNotSupported'
+      | 'VariantAlsoNegotiates'
+      | 'InsufficientStorage'
+      | 'LoopDetected'
+      | 'NotExtended'
+      | 'NetworkAuthenticationRequired'
+    >;
     // @ts-ignore
     export interface IPAddress {
       // IPAddress encoded as bytes.
@@ -3580,4 +3650,3 @@ export namespace type {
     }
   }
 }
-
